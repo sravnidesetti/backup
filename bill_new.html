@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<script>
+var cart=[ ];
+var sum=0;
+var i=0;
+var show="",print="";
+var products=[{productname:"doll",price:650},
+                      {productname:"Icecream",price:400},
+					  {productname:"dairymilk",price:1000},
+					  {productname:"kurtha",price:900},
+					  {productname:"jeans",price:900},
+					  {productname:"shirt",price:800},
+					  {productname:"shoe",price:700},
+					  {productname:"kitkat",price:100},
+					  {productname:"hoodie",price:500},
+					  {productname:"earphones",price:350},
+					  {productname:"watch",price:500},
+					  {productname:"anklets",price:750}];
+for(var j=0;j<products.length;j++)
+{
+show +=(`${j+1}-${products[j].productname}-${products[j].price}\n`);
+}
+alert("avalible products are:"+show);
+while( i<cart.length+1)
+{
+   var item=prompt("s.no of your product");
+   if(item== "end")
+   {
+   break;
+   }
+   else 
+   {
+     cart.push(products[item-1]); 
+	 console.log(cart);
+	 sum = sum+cart[i].price;
+      i++;
+   }
+} 
+for(var k=0;k<cart.length;k++)
+{
+print +=(`${k+1}-${cart[k].productname}-${cart[k].price}-\n`);
+}
+alert("items in your cart are: "+print);	  
+  document.write("total bill"+sum );
+   if(sum>2000&&cart.length>=5)
+   {
+	 document.write("congrats! you got 20% discount");
+	 document.write( "Discount amount :",sum*0.2);
+	 document.write(`bill you have to pay : ${sum-(sum*0.2)}`);
+   }
+   else if(sum>2000&&cart.length<5)
+   {
+	 document.write("congrats! you got 10% discount");
+	 document.write( "Discount amount :",sum*0.1);
+	 document.write(`bill you have to pay : ${sum-(sum*0.1)}`);
+   }
+   else if(sum<2000)
+  {
+ 	document.write("sorry! you got no discount");
+	document.write("bill you have to pay is"+sum);
+   }
+</script>
+</body>
+</html>

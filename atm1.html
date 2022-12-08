@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<script>
+ac();
+function ac() 
+{
+	var a=123456,b=8989,c=567890,d=6745, balance=0;
+	var m=prompt("enter your account number :");
+	    	 if(m==a||m==c)
+	    	 {
+	    	   var n=prompt("password :"); 
+	    		 if(n==b||n==d)
+	    		 {
+	    		  while(true) {
+	    		    if(m==a&&n==b||m==c&&n==d)
+	    		    {
+	    				
+	    		      alert("welcome to your account");
+	    	
+			      alert("enter 1 for Balance enquiry\nenter 2 for cash deposit\nenter 3 for money withdraw\nenter 4 for logout\nenter 5 for Exit");
+			      
+			       var v=prompt("enter a number for request");
+				      		        
+		             switch (v) {
+		    	               case "1":alert("balance :"+balance);; break;  
+		    	               case "2":var d=parseInt(prompt("Enter the amount you want to deposit"));
+		                                    balance += d;	  
+		                                    alert("deposit completed");		      
+		                                    alert("balance:"+balance);; break;     
+		    	               case "3": var w=parseInt(prompt("Enter the amount you want to withdraw"));
+		                                     if(w<=balance)
+		                                     {
+		                                       balance -= w;
+		                                     alert("withdraw completed");
+		                                     alert(balance);
+		                                     }
+		                                 else{
+		                                     alert("Insufficient funds");
+		                                     alert("avalible balance:"+balance);
+		                                     } ;break;      
+		    	               case "4":alert("you are logging out of your account");
+	    	                                ac();break;
+		    	               case "5":alert("Thank you for using the service");
+		    	                        alert("good bye");
+		    		                system.exit(0);
+			              default :alert("no such request is avalible");
+		                        }
+	    	            } 
+	    	      else
+	    	            {
+	    		    alert("username and password doesn't match");
+	    		    ac();
+	    		    }
+	    		    }
+	    		 }
+	             else{
+	    	          alert("password is incorrect");
+	    	          ac();
+	    		 }
+	    		 
+	    	 }
+	     else{
+	    		alert("Invalid account number");
+	    		 ac();
+	    	 }
+	   
+} 
+		
+		
+</script>
+</body>
+</html>

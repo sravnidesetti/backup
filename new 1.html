@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<script>
+let request=new XMLHttpRequest();
+request.open('GET','https://jsonplaceholder.typicode.com/users/1');
+request.send();
+request.addEventListner("load",hello);
+function hello(){
+               console.log(JSON.parse(this.responseText));
+			   }
+</script>
+</body>
+</html>

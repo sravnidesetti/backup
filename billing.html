@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<script>
+var bill=[ ];
+var sum=0;
+var i=0;
+while( i<bill.length+1)
+{
+   var cost=prompt("enter the bill of your product");
+   if(cost == "end")
+   {
+      break;
+   }
+   else
+   {
+     bill.push(parseInt(cost)); 
+	 console.log(bill);
+	 sum = sum+bill[i];
+      i++;
+    }
+} 
+	  document.write("total bill"+sum );
+   if(sum>2000&&bill.length>=5)
+   {
+	 document.write("congrats! you got 20% discount");
+	 document.write( "Discount amount :",sum*0.2);
+	 document.write(`bill you have to pay : ${sum-(sum*0.2)}`);
+   }
+   else if(sum>2000&&bill.length<5)
+   {
+	 document.write("congrats! you got 10% discount");
+	 document.write( "Discount amount :",sum*0.1);
+	 document.write(`bill you have to pay : ${sum-(sum*0.1)}`);
+   }
+   else if(sum<2000)
+  {
+ 	document.write("sorry! you got no discount");
+	document.write("bill you have to pay is"+sum);
+   }
+</script>
+</body>
+</html>
